@@ -38,7 +38,7 @@ public class CircleMoire extends BasicMoire {
 		paint.setAntiAlias(true);
 		paint.setStyle(Style.STROKE);
 		paint.setStrokeWidth(0);
-		paint.setColor(0xff0000ff);
+		paint.setColor(0xffffffff);
 
 		for (int i = 0; i < width; i += SPACE) {
 			canvas.drawCircle(centerX, centerY, i, paint);
