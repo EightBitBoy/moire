@@ -20,8 +20,8 @@
         
 	    <de.eightbitboy.moire.type.CircleMoire
 	        android:id="@+id/moireImage"
-	        android:layout_width="250dp"
-	        android:layout_height="250dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
 	        android:background="#ffff0000"
 	        android:contentDescription="main moire image" />
     </FrameLayout>
