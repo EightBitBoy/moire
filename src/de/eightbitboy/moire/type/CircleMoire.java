@@ -57,4 +57,10 @@ public class CircleMoire extends AbstractMoire {
 		Log.d("foo", distanceX + "");
 		return super.onScroll(e1, e2, distanceX, distanceY);
 	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+		Log.d("foo", velocityX + "");
+		return super.onFling(e1, e2, velocityX, velocityY);
+	}
 }

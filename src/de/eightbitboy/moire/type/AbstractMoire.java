@@ -6,7 +6,8 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-public abstract class AbstractMoire extends ImageView implements GestureDetector.OnGestureListener {
+public abstract class AbstractMoire extends ImageView implements GestureDetector.OnGestureListener,
+		GestureDetector.OnDoubleTapListener {
 
 	protected GestureDetector gestureDetector;
 
@@ -26,6 +27,7 @@ public abstract class AbstractMoire extends ImageView implements GestureDetector
 
 	private void setUp(Context context) {
 		this.gestureDetector = new GestureDetector(context, this);
+		this.gestureDetector.setOnDoubleTapListener(this);
 	}
 
 	@Override
@@ -59,6 +61,21 @@ public abstract class AbstractMoire extends ImageView implements GestureDetector
 
 	@Override
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+		return false;
+	}
+
+	@Override
+	public boolean onDoubleTap(MotionEvent e) {
+		return false;
+	}
+
+	@Override
+	public boolean onDoubleTapEvent(MotionEvent e) {
+		return false;
+	}
+
+	@Override
+	public boolean onSingleTapConfirmed(MotionEvent e) {
 		return false;
 	}
 }
