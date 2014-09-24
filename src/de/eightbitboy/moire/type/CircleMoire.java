@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
 
-public class CircleMoire extends BasicMoire {
+public class CircleMoire extends AbstractMoire {
 
 	public static int SPACE = 7;
 	public static int OFFSET = 30;
