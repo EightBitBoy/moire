@@ -4,14 +4,14 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public abstract class BasicMoire extends ImageView {
+public abstract class AbstractMoire extends ImageView {
 
-	public BasicMoire(Context context) {
+	public AbstractMoire(Context context) {
 		super(context);
 		initialize();
 	}
 
-	public BasicMoire(Context context, AttributeSet attrs) {
+	public AbstractMoire(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initialize();
 	}

@@ -5,11 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
+import android.view.DragEvent;
+import android.view.View;
 
-public class CircleMoire extends BasicMoire {
+public class CircleMoire extends AbstractMoire {
 
-	public static int SPACE = 7;
-	public static int OFFSET = 30;
+	private static final int SPACE = 7;
+	private static final int OFFSET = 30;
 
 	public CircleMoire(Context context) {
 		super(context);
@@ -21,7 +23,12 @@ public class CircleMoire extends BasicMoire {
 
 	@Override
 	public void initialize() {
-
+		this.setOnDragListener(new OnDragListener() {
+			@Override
+			public boolean onDrag(View v, DragEvent event) {
+				return false;
+			}
+		});
 	}
 
 	@Override
@@ -44,5 +51,10 @@ public class CircleMoire extends BasicMoire {
 			canvas.drawCircle(centerX, centerY, i, paint);
 		}
 
+	}
+
+	@Override
+	public boolean onDragEvent(DragEvent event) {
+		return super.onDragEvent(event);
 	}
 }
