@@ -5,6 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 
 public class CircleMoire extends AbstractMoire {
 
@@ -48,5 +50,11 @@ public class CircleMoire extends AbstractMoire {
 		for (int i = 0; i < width; i += this.SPACE) {
 			canvas.drawCircle(centerX, centerY + this.offset, i, paint);
 		}
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+		Log.d("foo", distanceX + "");
+		return super.onScroll(e1, e2, distanceX, distanceY);
 	}
 }
