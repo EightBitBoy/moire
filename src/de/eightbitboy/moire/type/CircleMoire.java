@@ -10,7 +10,7 @@ public class CircleMoire extends AbstractMoire {
 
 	public static int SPACE = 20;
 
-	public static int OFFSET = 100;
+	public int offset = 0;
 
 	public CircleMoire(Context context) {
 		super(context);
@@ -41,12 +41,12 @@ public class CircleMoire extends AbstractMoire {
 		paint.setStrokeWidth(0);
 		paint.setColor(0xffffffff);
 
-		for (int i = 0; i < width; i += SPACE) {
-			canvas.drawCircle(centerX, centerY - OFFSET, i, paint);
+		for (int i = 0; i < width; i += this.SPACE) {
+			canvas.drawCircle(centerX, centerY - this.offset, i, paint);
 		}
 
-		for (int i = 0; i < width; i += SPACE) {
-			canvas.drawCircle(centerX, centerY + OFFSET, i, paint);
+		for (int i = 0; i < width; i += this.SPACE) {
+			canvas.drawCircle(centerX, centerY + this.offset, i, paint);
 		}
 	}
 }
