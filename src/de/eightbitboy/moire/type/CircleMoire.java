@@ -8,8 +8,9 @@ import android.util.AttributeSet;
 
 public class CircleMoire extends AbstractMoire {
 
-	public static int SPACE = 7;
-	public static int OFFSET = 30;
+	public static int SPACE = 20;
+
+	public static int OFFSET = 100;
 
 	public CircleMoire(Context context) {
 		super(context);
@@ -41,8 +42,11 @@ public class CircleMoire extends AbstractMoire {
 		paint.setColor(0xffffffff);
 
 		for (int i = 0; i < width; i += SPACE) {
-			canvas.drawCircle(centerX, centerY, i, paint);
+			canvas.drawCircle(centerX, centerY - OFFSET, i, paint);
 		}
 
+		for (int i = 0; i < width; i += SPACE) {
+			canvas.drawCircle(centerX, centerY + OFFSET, i, paint);
+		}
 	}
 }
